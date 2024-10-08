@@ -1,0 +1,15 @@
+import vampy as vp
+
+# Define parameters for the simulation
+artery = vp.Artery(length=0.1, radius=0.01, elasticity=1.5e6, viscosity=0.004)
+inlet_pressure = vp.InletPressure(pressure=100)
+outlet_pressure = vp.OutletPressure(pressure=80)
+
+# Create a simulation object
+simulation = vp.Simulation(artery, inlet_pressure, outlet_pressure)
+
+# Run the simulation
+simulation.run(time=1.0, dt=0.001)
+
+# Plot the results
+simulation.plot()
